@@ -5,7 +5,7 @@ mkdir tempdir
 mkdir tempdir/templates
 mkdir tempdir/static
 
-cp sample_app.py tempdir/.
+cp cicd-sample-app/sample_app.py tempdir/.
 cp -r templates/* tempdir/templates/.
 cp -r static/* tempdir/static/.
 
@@ -14,7 +14,7 @@ FROM python
 RUN pip install flask
 COPY  ./static /home/myapp/static/
 COPY  ./templates /home/myapp/templates/
-COPY  cicd-sample-app/sample_app.py /home/myapp/
+COPY  sample_app.py /home/myapp/
 EXPOSE 5050
 CMD python /home/myapp/sample_app.py
 _EOF_
